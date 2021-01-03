@@ -35,24 +35,15 @@
           case 'C':
             document.getElementById('display').innerHTML = 'Bass Drum Hit Level 5a';
             break;
+          default:
+            document.getElementById('display').innerHTML = 'Nothing here to display yet. Click any of the buttons or press any of its keyboard keys to play a sound.';
         }
         let audio = document.getElementById(id);
         audio.play();
       }
       window.document.onkeyup = function(event) {
-        let keystroke = event.key.toUpperCase();
-        switch (keystroke) {
-          case 'Q':
-          case 'W':
-          case 'E':
-          case 'A':
-          case 'S':
-          case 'D':
-          case 'Z':
-          case 'X':
-          case 'C':
-            play(keystroke);
-        }
+        // let keystroke = event.key.toUpperCase();
+        play(event.key.toUpperCase());
       }
     </script>
   </head>
@@ -61,7 +52,7 @@
       <h1 class="text-center">Drum Machine by Felipe Costa</h1>
       <div class="card py-3">
         <div class="card-body">
-          <div class="text-center" id="display"></div>
+          <div class="text-center" id="display">Nothing here to display yet. Click any of the buttons or press any of its keyboard keys to play a sound.</div>
         </div>
       </div>
       <button class="drum-pad btn btn-block btn-primary" id="drum-0" onclick="play('Q')">
